@@ -14,7 +14,7 @@ dir = "ListaTusArchivos-Script-v4 - Musica.csv"
     M  `MN. M          MM    6W'   `Wb           VMMP         MM      
     M   `MM.M  mmmmm   MM    8M     M8 mmmmm      MM          MM      
     M     YMM          MM    YA.   ,A9            MM          MM      
-  .JML.    YM          `Mbmo  `Ybmd9'           .JMML.      .JMML'''    
+  .JML.    YM          `Mbmo  `Ybmd9'           .JMML.      .JMML   2.6'''    
                                                                     
 
 
@@ -73,7 +73,7 @@ def sussy_baka(lista : list) -> None:
 
 def agregar_cancion():
     ver_puntos()
-    sleep(0.3)
+    sleep(0.7)
     imagen_click('Points')
     sleep(0.7)
     try:
@@ -131,11 +131,11 @@ def imagen_buscar(image : str) -> bool:
     except:
         return False #safe en casos de excepciones
 
-def imagen_mover(image, confidence = 0.9, duration = 0.2):
+def imagen_mover(image, confidence = 0.8, duration = 0.2):
     p.moveTo(p.locateCenterOnScreen(f'images/{image}.PNG', confidence=confidence), 
              duration=duration)
 
-def imagen_click(image, confidence = 0.9, duration = 0.2):
+def imagen_click(image, confidence = 0.8, duration = 0.2):
     p.click(p.locateCenterOnScreen(f'images/{image}.PNG', confidence=confidence), 
              duration=duration)
 
