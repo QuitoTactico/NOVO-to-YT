@@ -14,7 +14,7 @@ dir = "ListaTusArchivos-Script-v4 - Musica.csv"
     M  `MN. M          MM    6W'   `Wb           VMMP         MM      
     M   `MM.M  mmmmm   MM    8M     M8 mmmmm      MM          MM      
     M     YMM          MM    YA.   ,A9            MM          MM      
-  .JML.    YM          `Mbmo  `Ybmd9'           .JMML.      .JMML      1.0'''    
+  .JML.    YM          `Mbmo  `Ybmd9'           .JMML.      .JMML'''    
                                                                     
 
 
