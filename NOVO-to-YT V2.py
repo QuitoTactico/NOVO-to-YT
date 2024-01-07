@@ -14,7 +14,7 @@ dir = "ListaTusArchivos-Script-v4 - Musica.csv"
     M  `MN. M          MM    6W'   `Wb           VMMP         MM      
     M   `MM.M  mmmmm   MM    8M     M8 mmmmm      MM          MM      
     M     YMM          MM    YA.   ,A9            MM          MM      
-  .JML.    YM          `Mbmo  `Ybmd9'           .JMML.      .JMML   2.9'''    
+  .JML.    YM          `Mbmo  `Ybmd9'           .JMML.      .JMML   2.9.2'''    
                                                                     
 
 
@@ -211,10 +211,7 @@ lista_de_prueba = {'-Prueba-': ['La costa del silencio',
                               'back in black', 'Red Hot Chili Peppers - Scar Tissue [Official Music Video]',
                               '[MV] 이달의 소녀_츄 (LOONA_Chuu) _Heart Attack_']}
 
-if __name__ == '__main__':
-    novos = listarCanciones(dir)
-    #novos = lista_de_prueba
-
+def escoger(novos):
     while True:
         print('\n¿Qué lista quisieras?', list(novos.keys()), '-> ', sep='\n', end='')
 
@@ -232,5 +229,25 @@ if __name__ == '__main__':
             desde = int(input('Desde dónde bro? -> '))
             lista = novos[carpeta][desde:]
             sussy_baka(lista, carpeta)
+
+def preseleccionadas(novos):
+    elegidos = ['-Novo 1-',
+                '-Novo 2-',
+                '-OP - EN-',
+                '-Electro-']
+
+    for carpeta in elegidos:
+        lista = novos[carpeta]
+        sussy_baka(lista, carpeta)
+
+if __name__ == '__main__':
+    novos = listarCanciones(dir)
+    #novos = lista_de_prueba
+
+    opcion = input('1. Escoger\n2. Preseleccionadas\n-> ')
+    if opcion == '1':
+        escoger(novos)
+    elif opcion == '2':
+        preseleccionadas(novos)
 
     print('La re buena, chao')
