@@ -5,7 +5,7 @@ import pyperclip as pc
 
 # puede ser necesario instalar pillow - cmd: pip install pillow
 
-dir = "NOVO/ListaTusArchivos-Script-v4 - Musica.csv"
+dir = "NOVO/INPUT/ListaTusArchivos-Script-v4 - Musica.csv"
 
 
 """7MN.   `7MF'        mm                    `YMM'   `MM'MMP""MM""YMM 
@@ -199,7 +199,7 @@ def barra_busqueda():
 # True : Existe | False : No papu :'V
 def imagen_buscar(image: str) -> bool:
     try:
-        p.locateCenterOnScreen(f"images/{image}.PNG", confidence=0.9)
+        p.locateCenterOnScreen(f"NOVO/images/{image}.PNG", confidence=0.9)
         return True
     except:
         return False  # safe en casos de excepciones
@@ -207,7 +207,7 @@ def imagen_buscar(image: str) -> bool:
 
 def imagen_mover(image, confidence=0.8, duration=0.2):
     p.moveTo(
-        p.locateCenterOnScreen(f"images/{image}.PNG", confidence=confidence),
+        p.locateCenterOnScreen(f"NOVO/images/{image}.PNG", confidence=confidence),
         duration=duration,
     )
 
@@ -216,7 +216,7 @@ def imagen_click(image, confidence=0.8, duration=0.2, region=None, minSearchTime
     try:
         p.click(
             p.locateCenterOnScreen(
-                f"images/{image}.PNG",
+                f"NOVO/images/{image}.PNG",
                 confidence=confidence,
                 region=region,
                 minSearchTime=minSearchTime,
@@ -226,7 +226,7 @@ def imagen_click(image, confidence=0.8, duration=0.2, region=None, minSearchTime
     except:
         p.click(
             p.locateCenterOnScreen(
-                f"images/{image}.PNG", confidence=0.75, region=region, minSearchTime=2
+                f"NOVO/images/{image}.PNG", confidence=0.75, region=region, minSearchTime=2
             ),
             duration=duration,
         )
