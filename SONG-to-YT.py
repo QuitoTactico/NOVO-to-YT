@@ -193,22 +193,34 @@ def add_videos_to_playlist(youtube, playlist_id, video_ids):
         playlist_id: ID de la lista de reproducción.
         video_ids: Lista de IDs de videos de YouTube.
     """
-    for video_id in video_ids:
-        request = youtube.playlistItems().insert(
-            part="snippet",
-            body={
-                "snippet": {
-                    "playlistId": playlist_id,
-                    "resourceId": {
-                        "kind": "youtube#video",
-                        "videoId": video_id,
-                    },
-                }
-            },
-        )
-        response = request.execute()
-        print(f"Video {video_id} agregado: {response}")
 
+    errors = []
+
+    for index, video_id in enumerate(video_ids):
+        try:
+            request = youtube.playlistItems().insert(
+                part="snippet",
+                body={
+                    "snippet": {
+                        "playlistId": playlist_id,
+                        "resourceId": {
+                            "kind": "youtube#video",
+                            "videoId": video_id,
+                        },
+                    }
+                },
+            )
+            response = request.execute()
+
+            video_title = response['snippet']['title']
+            channel_id = response['snippet']['channelId']
+
+            print(f"Video {video_id} agregado: {video_title} ({channel_id})")
+        except:
+            errors.append([index, video_id])
+            print(f"Error al agregar video {video_id} ({index}) a la lista de reproducción")
+
+    return errors
 
 if __name__ == "__main__":
     # autentica con YouTube
@@ -222,6 +234,11 @@ if __name__ == "__main__":
     print(f"YouTube links {len(video_ids)}:")
 
     # agrega los videos a la lista de reproducción
-    add_videos_to_playlist(youtube, PLAYLIST_ID, video_ids)
+    errors = add_videos_to_playlist(youtube, PLAYLIST_ID, video_ids)
 
+    if errors:
+        print("Errors:")
+        for error in errors:
+            print(error)
+            
     print("Process finished!")
