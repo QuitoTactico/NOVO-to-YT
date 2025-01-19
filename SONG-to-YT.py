@@ -42,7 +42,6 @@ def categorize(line: str):
     if line in ["\n", "", " ", "  ", "­", "­ ­"]:
         return
 
-
     elif "/shorts" in line:
         results["youtube short"].append(line)
 
@@ -95,13 +94,14 @@ def results_saver(results: dict, output_file: str):
             file.write("\n")
 
 
-if __name__ == "__main__":
+def full_categorization():
     files = files_recognicer(INPUT_DIR)
+    common_youtube = []
 
     for INPUT_FILE in files:
         print(f"Processing file: {INPUT_FILE}")
 
-        global results 
+        global results
         results = {
             "youtube": [],
             "youtube playlist": [],
@@ -123,3 +123,13 @@ if __name__ == "__main__":
 
         OUTPUT_FILE = INPUT_FILE.replace("INPUT", "OUTPUT")
         results_saver(results, OUTPUT_FILE)
+        common_youtube.extend(results["youtube"])
+
+    print(f"YouTube links {len(common_youtube)}:")
+    for link in common_youtube:
+        print(link)
+
+
+if __name__ == "__main__":
+    full_categorization()
+    print("Process finished!")

@@ -226,7 +226,10 @@ def imagen_click(image, confidence=0.8, duration=0.2, region=None, minSearchTime
     except:
         p.click(
             p.locateCenterOnScreen(
-                f"NOVO/images/{image}.PNG", confidence=0.75, region=region, minSearchTime=2
+                f"NOVO/images/{image}.PNG",
+                confidence=0.75,
+                region=region,
+                minSearchTime=2,
             ),
             duration=duration,
         )
