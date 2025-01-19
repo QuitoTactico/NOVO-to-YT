@@ -212,15 +212,29 @@ def add_videos_to_playlist(youtube, playlist_id, video_ids):
             )
             response = request.execute()
 
-            video_title = response['snippet']['title']
-            channel_id = response['snippet']['channelId']
+            video_title = response["snippet"]["title"]
+            channel_id = response["snippet"]["channelId"]
 
             print(f"Video {video_id} agregado: {video_title} ({channel_id})")
         except:
             errors.append([index, video_id])
-            print(f"Error al agregar video {video_id} ({index}) a la lista de reproducción")
+            print(
+                f"Error al agregar video {video_id} ({index}) a la lista de reproducción"
+            )
 
     return errors
+
+
+def error_saving(video_links: list[str], errors: list):
+    print(f"Errors {len(errors)}:")
+    for error in errors:
+        print(error)
+
+    complete_errors = [[i for i in video_links if error[1] in i][0] for error in errors]
+    with open("SONG/OUTPUT/COMPLETE ERRORS.txt", "w", encoding="utf-8") as file:
+        for error in complete_errors:
+            file.write(f"{error}\n")
+
 
 if __name__ == "__main__":
     # autentica con YouTube
@@ -236,9 +250,15 @@ if __name__ == "__main__":
     # agrega los videos a la lista de reproducción
     errors = add_videos_to_playlist(youtube, PLAYLIST_ID, video_ids)
 
+    """
+    # para errores guardados manualmente en ERRORS.txt
+    errors = []
+    with open("SONG/OUTPUT/ERRORS.TXT", "r", encoding="utf-8") as file:
+        for line in file.readlines():
+            errors.append(eval(line))
+    """
+
     if errors:
-        print("Errors:")
-        for error in errors:
-            print(error)
-            
+        error_saving(video_links, errors)
+
     print("Process finished!")
