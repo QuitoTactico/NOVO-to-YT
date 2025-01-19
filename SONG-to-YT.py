@@ -7,9 +7,10 @@ import pickle
 # ========================= OPTIONS ==================================
 
 
-PLAYLIST_ID = "PLV2hNo2SKdY1b7zOrxEsdlCarJmUJvwdU"
-INPUT_DIR = "SONG/INPUT/"
 PARTICIPANTS = ["Esteban.Quito ~", "Mi empanada de pollo 🦆💕"]
+PLAYLIST_ID = "PLV2hNo2SKdY1b7zOrxEsdlCarJmUJvwdU"
+CLIENT_SECRETS_JSON = "SONG/song-to-yt-e70bdf490ee3.json"
+INPUT_DIR = "SONG/INPUT/"
 
 
 # ====================== CATEGORIZATION ===============================
@@ -174,7 +175,7 @@ def authenticate_youtube():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                "client_secret.json", SCOPES
+                CLIENT_SECRETS_JSON, SCOPES
             )
             creds = flow.run_local_server(port=0)
         # guarda las credenciales para futuras ejecuciones
