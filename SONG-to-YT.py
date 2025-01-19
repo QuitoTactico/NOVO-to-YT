@@ -9,7 +9,7 @@ import pickle
 
 PARTICIPANTS = ["Esteban.Quito ~", "Mi empanada de pollo 🦆💕"]
 PLAYLIST_ID = "PLV2hNo2SKdY1b7zOrxEsdlCarJmUJvwdU"
-CLIENT_SECRETS_JSON = "SONG/song-to-yt-e70bdf490ee3.json"
+CLIENT_SECRETS_JSON = "SONG/client_secret_53287510692-07ea9mp5ff9v20k56b07k92l0v0p8cks.apps.googleusercontent.com.json"
 INPUT_DIR = "SONG/INPUT/"
 
 
