@@ -1,13 +1,3 @@
-========== PLAYLIST ==========
-https://www.youtube.com/playlist?list=PLV2hNo2SKdY1b7zOrxEsdlCarJmUJvwdU&jct=oMJIGhGeviFCW8kfPtitRH-bubiEGw
-https://youtube.com/playlist?list=PLjRgACjCMuLl3rfK2r-MB-Bn5Q26X9Ot0&si=BnAIRAQd87rOv1jJ
-https://youtube.com/playlist?list=PLFbkdPTqPkCMvivl_wC_LbT003sPezxxm&si=yq6koa0WB0lylt1N
-
-========== SHORTS ==========
-https://youtube.com/shorts/3VGAySO6NDg?si=P0MDlqukTcSpOerM
-https://youtube.com/shorts/vX3RTpo7z7o?si=L0qD1BP66vihoIdF
-https://youtube.com/shorts/CH7lVp7XZF4?si=RzSodFSwB38gOGo0
-
 ========== YOUTUBE ==========
 https://www.youtube.com/watch?v=4tlUwgtgdZA&si=2JGoA2ctWFT0JvzI
 https://youtu.be/lFFV3iBSSJ0?si=_DZCo1ozkSXPzypq
@@ -27,7 +17,6 @@ https://www.youtube.com/watch?v=SOTpatXRN3U&si=SrdXDHpPVDCFr3rK
 https://www.youtube.com/watch?v=dEfl-ObuapA&si=iACvnPVuseBfSyNV
 https://www.youtube.com/watch?v=skilutORMZM&si=o_WM-x8OZUB0VVCo
 https://youtu.be/C-o8pTi6vd8?si=t6FGWIuo0qg5uca-
-https://youtube.com/@AmeSubs?si=Iea_WmdFV3-yDkHT
 https://youtu.be/qyY3UhQhZK4?si=fBMiXzl1r-n8_BN6
 https://youtu.be/uiogMyTpDy0?si=3GAPYP62praJt9oU
 https://youtu.be/RhPX1bt0yWw?si=a2eJ-AIljKEQJAMw
@@ -180,6 +169,16 @@ https://www.youtube.com/watch?v=GFxrkP5jYaA&si=QGmT6jRqQsrW21_Mr
 https://youtu.be/piXHZagPu2M?si=ywrmnDM5Pc-dkWcR
 https://www.youtube.com/watch?v=r8TlM148h1E&si=WUn9V1zCqq96E_gk
 
+========== YOUTUBE PLAYLIST ==========
+https://www.youtube.com/playlist?list=PLV2hNo2SKdY1b7zOrxEsdlCarJmUJvwdU&jct=oMJIGhGeviFCW8kfPtitRH-bubiEGw
+https://youtube.com/playlist?list=PLjRgACjCMuLl3rfK2r-MB-Bn5Q26X9Ot0&si=BnAIRAQd87rOv1jJ
+https://youtube.com/playlist?list=PLFbkdPTqPkCMvivl_wC_LbT003sPezxxm&si=yq6koa0WB0lylt1N
+
+========== YOUTUBE SHORT ==========
+https://youtube.com/shorts/3VGAySO6NDg?si=P0MDlqukTcSpOerM
+https://youtube.com/shorts/vX3RTpo7z7o?si=L0qD1BP66vihoIdF
+https://youtube.com/shorts/CH7lVp7XZF4?si=RzSodFSwB38gOGo0
+
 ========== SPOTIFY ==========
 https://open.spotify.com/track/5rUEPaxofuF16o5jCFDtFt?si=LSQGiZzXSN6GB684K-5ycA
 https://open.spotify.com/track/5VFk6u55TlxstTz08gvj6r?si=YV_Pl0RER4u7mdzmhaR7rg
@@ -195,6 +194,8 @@ https://open.spotify.com/track/6HUeXwT3LqfcEVYYc2Z9uv?si=1U9mQNkLTz2x5A5af1bDGA
 https://open.spotify.com/wrapped/share/share-bbc29c2b6a8949fea14845de7cfdf803?si=_Bf91g1zR9W29THU562dsQ&track-id=4teLL1D8ctoRaZbvVKvn2M&pi=K338pmIPRP-wD
 https://open.spotify.com/track/1DLEUwyT8k97I8YrG1WFW1?si=qPL98IIGSxqKKskuSBJIDg
 https://open.spotify.com/track/2PapeLp1JGMSaYg5trWXmo?si=SZXcnwJsRZGuyltLI2KiOA
+
+========== SPOTIFY PLAYLIST ==========
 
 ========== ARTIST ==========
 tia, la del op de kakegurui
@@ -216,6 +217,7 @@ chinozo, de seguro ya sacó algo
 
 ツミキ / nomelon nolemon
 last note
+https://youtube.com/@AmeSubs?si=Iea_WmdFV3-yDkHT
 r-906
 la piba de 
 -- isonosuke, por amor a dios

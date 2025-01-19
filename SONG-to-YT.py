@@ -9,15 +9,6 @@ PARTICIPANTS = ["Esteban.Quito ~", "Mi empanada de pollo 🦆💕"]
 
 # ====================================================================
 
-results = {
-    "playlist": [],
-    "shorts": [],
-    "youtube": [],
-    "spotify": [],
-    "artist": [],
-    "other": [],
-}
-
 
 def files_recognicer(input_dir: str):
     files = []
@@ -51,22 +42,36 @@ def categorize(line: str):
     if line in ["\n", "", " ", "  ", "­", "­ ­"]:
         return
 
-    if "/playlist" in line:
-        results["playlist"].append(line)
 
     elif "/shorts" in line:
-        results["shorts"].append(line)
+        results["youtube short"].append(line)
 
     elif "youtube.com" in line or "youtu.be" in line:
         lines = line.split()
+
         for basic_line in lines:
+            if "/playlist" in line:
+                results["youtube playlist"].append(basic_line)
+                continue
             if basic_line.startswith("http"):
-                results["youtube"].append(basic_line)
+                if "@" in basic_line:
+                    results["artist"].append(basic_line)
+                else:
+                    results["youtube"].append(basic_line)
             else:
                 results["other"].append(basic_line)
 
     elif "open.spotify.com" in line:
-        results["spotify"].append(line)
+        lines = line.split()
+
+        for basic_line in lines:
+            if "/playlist" in line:
+                results["spotify playlist"].append(basic_line)
+                continue
+            if basic_line.startswith("http"):
+                results["spotify"].append(basic_line)
+            else:
+                results["other"].append(basic_line)
 
     elif "más de " in line.lower() or "mas de " in line.lower():
         results["artist"].append(
@@ -95,6 +100,17 @@ if __name__ == "__main__":
 
     for INPUT_FILE in files:
         print(f"Processing file: {INPUT_FILE}")
+
+        global results 
+        results = {
+            "youtube": [],
+            "youtube playlist": [],
+            "youtube short": [],
+            "spotify": [],
+            "spotify playlist": [],
+            "artist": [],
+            "other": [],
+        }
 
         with open(INPUT_FILE, "r", encoding="utf-8") as file:
             lines = file.readlines()
