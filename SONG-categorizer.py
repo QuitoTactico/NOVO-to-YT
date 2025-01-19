@@ -1,11 +1,25 @@
+import os
+
 # ========================= OPTIONS ==================================
 
-FILE = "SONG/chat/Chat de WhatsApp con Para revivir SONG 'vvVVvV.txt"
+
+INPUT_DIR = "SONG/INPUT/"
 PARTICIPANTS = ["Esteban.Quito ~", "Mi empanada de pollo 🦆💕"]
+
 
 # ====================================================================
 
 results = {"youtube": [], "spotify": [], "artist": [], "other": []}
+
+
+def files_recognicer(input_dir: str):
+    files = []
+
+    for file in os.listdir(input_dir):
+        if file.endswith(".txt"):
+            files.append(input_dir + file)
+
+    return files
 
 
 def clean(line: str):
@@ -30,7 +44,7 @@ def categorize(line: str):
     if line in ["\n", "", " ", "  ", "­", "­ ­"]:
         return
 
-    if "www.youtube.com" in line or "youtu.be" in line:
+    if "youtube.com" in line or "youtu.be" in line:
         results["youtube"].append(line)
 
     elif "open.spotify.com" in line:
@@ -45,12 +59,33 @@ def categorize(line: str):
         results["other"].append(line)
 
 
-if __name__ == "__main__":
-    with open(FILE, "r", encoding="utf-8") as file:
-        lines = file.readlines()
-        for line in lines:
-            clean_lines = clean(line)
-            for clean_line in clean_lines:
-                categorize(clean_line)
+def results_saver(results: dict, output_file: str):
 
-    print(results["artist"])
+    with open(output_file, "w", encoding="utf-8") as file:
+
+        for key, value in results.items():
+            file.write(f"{'='*10} {key.upper()} {'='*10}\n")
+
+            for item in value:
+                file.write(f"{item}\n")
+
+            file.write("\n")
+
+
+if __name__ == "__main__":
+    files = files_recognicer(INPUT_DIR)
+
+    for INPUT_FILE in files:
+        print(f"Processing file: {INPUT_FILE}")
+
+        with open(INPUT_FILE, "r", encoding="utf-8") as file:
+            lines = file.readlines()
+
+            for line in lines:
+                clean_lines = clean(line)
+
+                for clean_line in clean_lines:
+                    categorize(clean_line)
+
+        OUTPUT_FILE = INPUT_FILE.replace("INPUT", "OUTPUT")
+        results_saver(results, OUTPUT_FILE)
