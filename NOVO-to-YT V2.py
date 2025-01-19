@@ -5,7 +5,7 @@ import pyperclip as pc
 
 # puede ser necesario instalar pillow - cmd: pip install pillow
 
-dir = "ListaTusArchivos-Script-v4 - Musica.csv"
+dir = "NOVO/ListaTusArchivos-Script-v4 - Musica.csv"
 
 
 """7MN.   `7MF'        mm                    `YMM'   `MM'MMP""MM""YMM 
