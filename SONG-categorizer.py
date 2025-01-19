@@ -9,7 +9,14 @@ PARTICIPANTS = ["Esteban.Quito ~", "Mi empanada de pollo 🦆💕"]
 
 # ====================================================================
 
-results = {"youtube": [], "spotify": [], "artist": [], "other": []}
+results = {
+    "playlist": [],
+    "shorts": [],
+    "youtube": [],
+    "spotify": [],
+    "artist": [],
+    "other": [],
+}
 
 
 def files_recognicer(input_dir: str):
@@ -44,8 +51,19 @@ def categorize(line: str):
     if line in ["\n", "", " ", "  ", "­", "­ ­"]:
         return
 
-    if "youtube.com" in line or "youtu.be" in line:
-        results["youtube"].append(line)
+    if "/playlist" in line:
+        results["playlist"].append(line)
+
+    elif "/shorts" in line:
+        results["shorts"].append(line)
+
+    elif "youtube.com" in line or "youtu.be" in line:
+        lines = line.split()
+        for basic_line in lines:
+            if basic_line.startswith("http"):
+                results["youtube"].append(basic_line)
+            else:
+                results["other"].append(basic_line)
 
     elif "open.spotify.com" in line:
         results["spotify"].append(line)
